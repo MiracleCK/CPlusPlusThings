@@ -31,7 +31,7 @@ template <class T> void Array<T>::Sort() {
   for (int i = 0; i < MAXSIZE - 1; i++) {
     p = i;
     for (j = i + 1; j < MAXSIZE; j++) {
-      if (array[p] < array[j])
+      if (array[p] > array[j])
         p = j;
     }
     T t;
@@ -40,12 +40,13 @@ template <class T> void Array<T>::Sort() {
     array[p] = t;
   }
 }
+
 template <> void Array<char *>::Sort() {
   int p, j;
   for (int i = 0; i < MAXSIZE - 1; i++) {
     p = i;
     for (j = i + 1; j < MAXSIZE; j++) {
-      if (strcmp(array[p], array[j]) < 0)
+      if (strcmp(array[p], array[j]) > 0)
         p = j;
     }
     char *t = array[i];

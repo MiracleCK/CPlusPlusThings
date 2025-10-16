@@ -2,10 +2,12 @@
 #include <cstring>
 #include <iostream>
 using namespace std;
+
 struct Person { //职工基本信息的结构
   double salary;
   char *name;
 };
+
 class SalaryManaege {
   Person *employ; //存放职工信息的数组
   int max;        //数组下标上界
@@ -32,11 +34,12 @@ public:
   }
 
   void display() {
-    for (int i = 0; i < n; i++)
-      cout << employ[i].name << "   " << employ[i].salary << endl;
+    for (int i = 0; i < n; ++i)
+      cout << employ[i].name << "\t" << employ[i].salary << endl;
   }
   ~SalaryManaege() { delete[] employ; }
 };
+
 int main() {
   SalaryManaege s(3);
   s["张三"] = 2188.88;
@@ -45,7 +48,8 @@ int main() {
   cout << "张三\t" << s["张三"] << endl;
   cout << "里斯\t" << s["里斯"] << endl;
   cout << "王无\t" << s["王无"] << endl;
+  cout << endl;
 
-  cout << "-------下为display的输出--------\n\n";
+  cout << "-------下为display的输出--------\n";
   s.display();
 }
