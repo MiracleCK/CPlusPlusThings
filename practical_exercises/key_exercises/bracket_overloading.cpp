@@ -39,8 +39,7 @@ public:
   }
   ~SalaryManaege() { delete[] employ; }
 };
-
-int main() {
+main() {
   SalaryManaege s(3);
   s["张三"] = 2188.88;
   s["里斯"] = 1230.07;
@@ -48,7 +47,6 @@ int main() {
   cout << "张三\t" << s["张三"] << endl;
   cout << "里斯\t" << s["里斯"] << endl;
   cout << "王无\t" << s["王无"] << endl;
-  cout << endl;
 
   cout << "-------下为display的输出--------\n";
   s.display();

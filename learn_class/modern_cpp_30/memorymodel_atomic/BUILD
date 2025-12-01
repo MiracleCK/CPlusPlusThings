@@ -4,8 +4,8 @@
 load("@rules_cc//cc:defs.bzl", "cc_binary")
 
 cc_binary(
-    name = "literal",
-    srcs = ["literal.cpp"],
+    name = "barrier_singleton",
+    srcs = ["barrier_singleton.cpp"],
     copts = ["-std=c++17"],
 )
 cc_binary(

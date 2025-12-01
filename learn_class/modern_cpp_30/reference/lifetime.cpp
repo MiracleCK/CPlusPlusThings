@@ -55,16 +55,19 @@ Derived factory() {
 
 int main() {
     process_shape(circle(), triangle());
+    cout << "----------aaaaa----------" << endl;
     cout << endl;
     // 临时对象延迟
-//    result &&r = process_shape(circle(), triangle());
+    // result &&r = process_shape(circle(), triangle());
     // 临时对象延迟只对rvalue有用，而对xvalue无用！
-//    result &&r = std::move(process_shape(circle(), triangle()));
+    // result &&r = std::move(process_shape(circle(), triangle()));
 
-//   const Base &b1 = factory();
+    const Base &b1 = factory();
 
+    cout << "----------bbbbb----------" << endl;
     Base *b1 = new Derived;
     delete b1;
+    cout << "----------ccccc----------" << endl;
     cout<<endl;
     Derived d;
     Base &b2 =d;

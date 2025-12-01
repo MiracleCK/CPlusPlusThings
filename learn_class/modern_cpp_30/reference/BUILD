@@ -1,8 +1,8 @@
-# please run `bazel run //learn_class/modern_cpp_30/reference:reference`
-# please run `bazel run //learn_class/modern_cpp_30/reference:forward`
-# please run `bazel run //learn_class/modern_cpp_30/reference:ref`
 # please run `bazel run //learn_class/modern_cpp_30/reference:collapses`
+# please run `bazel run //learn_class/modern_cpp_30/reference:forward`
 # please run `bazel run //learn_class/modern_cpp_30/reference:lifetime`
+# please run `bazel run //learn_class/modern_cpp_30/reference:ref`
+# please run `bazel run //learn_class/modern_cpp_30/reference:reference`
 
 load("@rules_cc//cc:defs.bzl", "cc_binary", "cc_library")
 

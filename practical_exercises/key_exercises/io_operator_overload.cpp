@@ -6,6 +6,7 @@
 #include <cstring>
 #include <iostream>
 using namespace std;
+
 class Sales {
 private:
   char name[10];
@@ -18,6 +19,7 @@ public:
   friend Sales &operator<<(ostream &os, Sales &s); //重载输出运算符
   friend Sales &operator>>(istream &is, Sales &s); //重载输入运算符
 };
+
 Sales::Sales(char *Name, char *ID, int Age) {
   strcpy(name, Name);
   strcpy(id, ID);
@@ -34,6 +36,7 @@ Sales &operator>>(istream &is, Sales &s) {
   is >> s.name >> s.id >> s.age;
   return s;
 }
+
 int main() {
   Sales s1("杜康", "214198012111711", 40); // L1
   cout << s1;                              // L2

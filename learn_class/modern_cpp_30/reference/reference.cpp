@@ -30,14 +30,14 @@ int main() {
     cout << "(cout << ' ').addr=" << &(cout << ' ') << endl;
     cout << "(\"hello\").addr=" << &("hello") << endl;
     // rvalue
-    cout<<true<<endl;
+    cout<< "true:" <<endl;
+    cout<< true <<endl;
     // xvalue
     f(); // The expression f() belongs to the xvalue category, because f() return type is an rvalue reference to object type.
     static_cast<int&&>(7); // The expression static_cast<int&&>(7) belongs to the xvalue category, because it is a cast to an rvalue reference to object type.
     std::move(7); // std::move(7) is equivalent to static_cast<int&&>(7).
 
     ff().i; // The expression f().i belongs to the xvalue category, because As::i is a non-static data member of non-reference type, and the subexpression f() belongs to the xvlaue category.
-
 
     return 0;
 }

@@ -26,7 +26,6 @@ public:
     }
 };
 
-
 int main() {
     int x;
     int &&r1 = 10;
@@ -37,7 +36,6 @@ int main() {
     Widget<int &> w;
     w.judge();
 
-
     Widget<int> w1, w2;
 
     auto&& v1 = w1;                  // v1 is an auto-based universal reference being
@@ -45,7 +43,7 @@ int main() {
     // lvalue reference referring to w1.
 
     // 不能编译
-//    decltype(w1)&& v2 = w2;          // v2 is a decltype-based universal reference, and
+    // decltype(w1)&& v2 = w2;          // v2 is a decltype-based universal reference, and
     // decltype(w1) is Widget, so v2 becomes an rvalue reference.
     // w2 is an lvalue, and it’s not legal to initialize an
     // rvalue reference with an lvalue, so

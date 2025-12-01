@@ -56,14 +56,14 @@ int main(int argc, char const *argv[]) {
   cin.getline(drop_value, 20);
   for (iter = mp.begin(); iter != mp.end(); iter++) {
     if (strcmp(iter->first, drop_key) == 0) {
-      cout << iter->first << "按照key查找出来了！"
+      cout << iter->first << "\t" << "按照key查找出来了！"
            << "对应的value为：" << iter->second << endl;
       cout << "开始删除元素！" << endl;
       mp.erase(iter);
       break;
     }
     if (strcmp(iter->second, drop_value) == 0) {
-      cout << iter->second << "value查找出来了！"
+      cout << iter->second << "\t" << "按照value查找出来了！"
            << "对应的key为：" << iter->first << endl;
       cout << "开始删除元素！" << endl;
       mp.erase(iter);

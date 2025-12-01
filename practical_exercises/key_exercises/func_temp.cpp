@@ -11,9 +11,10 @@ const char *compareMax<const char *>(const char *s1, const char *s2) {
        << " call compareMax template" << endl;
   return strcmp(s1, s2) >= 0 ? s1 : s2;
 }
+
 int main(int argc, char const *argv[]) {
   cout << compareMax(1, 2) << endl;
-  cout << compareMax("asda", "qweq") << endl;
+  cout << compareMax("asda", "aw") << endl;
   
   return 0;
 }

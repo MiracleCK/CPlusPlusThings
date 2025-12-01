@@ -1,6 +1,7 @@
 /* 重载圆括号的时钟.cpp */
 #include <iostream>
 using namespace std;
+
 class Time {
 private:
   int hh, mm, ss;
@@ -14,6 +15,7 @@ public:
   }
   void ShowTime() { cout << hh << ":" << mm << ":" << ss << endl; }
 };
+
 int main() {
   Time t1(12, 10, 11);
   t1.ShowTime();
@@ -21,5 +23,4 @@ int main() {
   t1.ShowTime();
   t1(10, 10, 10);
   t1.ShowTime();
-  
 }

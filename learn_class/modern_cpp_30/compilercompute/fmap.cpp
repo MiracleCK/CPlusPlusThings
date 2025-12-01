@@ -30,5 +30,8 @@ int main() {
   for (auto item : result)
     cout << item << " ";
   cout << endl;
+  cout << endl;
+  cout << endl;
   return 0;
 }
+

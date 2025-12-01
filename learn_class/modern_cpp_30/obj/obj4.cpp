@@ -1,31 +1,30 @@
-//
-// Created by light on 19-12-22.
-//
-
 #include <iostream>
+#include <cstdlib>
 
 using namespace std;
 
-// Can copy and move
 class A {
 public:
   A() { cout << "Create A\n"; }
-
   ~A() { cout << "Destroy A\n"; }
-
   A(const A &) { cout << "Copy A\n"; }
-
-  A(A &&) = delete;
+  A(A &&) = delete;  // 坚持删除移动构造
 };
 
-A getA_duang() {
+// 使用输出参数避免返回值问题
+void getA_duang(A& result) {
   A a1;
   A a2;
   if (rand() > 42) {
-    return a1;
+    result = a1;  // 使用拷贝赋值
   } else {
-    return a2;
+    result = a2;  // 使用拷贝赋值
   }
 }
 
-int main() { auto a = getA_duang(); }
+int main() { 
+  srand(time(nullptr));
+  A a;
+  getA_duang(a); 
+  return 0;
+}

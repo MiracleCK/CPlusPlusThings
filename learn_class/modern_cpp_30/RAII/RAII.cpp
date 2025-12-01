@@ -1,4 +1,4 @@
-#include <fstream>
+// #include <fstream>
 #include <iostream>
 #include <mutex>
 using namespace std;
@@ -69,13 +69,15 @@ void foo() {
 }
 
 int main() {
-
-  // 第一种方式
+  // 
+  cout << "------1------" << endl;
   shape *sp = create_shape(shape_type::circle);
+  cout << "------2------" << endl;
   sp->print();
   delete sp;
-
+  
   // 第二种方式
+  cout << "------3------" << endl;
   foo();
 
   return 0;

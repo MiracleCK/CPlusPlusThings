@@ -1,10 +1,11 @@
 //
 // Created by light on 19-12-15.
 //
-
 #include <iostream> // std::cout/endl
 #include <utility> // std::move
+
 using namespace std;
+
 class Obj {
 public:
     Obj()
@@ -21,6 +22,7 @@ public:
         cout << "Obj(Obj&&)" << endl;
     }
 };
+
 Obj simple()
 {
     Obj obj;
@@ -44,6 +46,7 @@ Obj complicated(int n)
         return obj2;
     }
 }
+
 int main()
 {
     cout << "*** 1 ***" << endl;
