@@ -5,10 +5,12 @@
 #include <vector>
 using namespace std;
 
-class Person {
+class Person
+{
 public:
   Person() {}
-  Person(char *name, char *id, int math, int chinese, int english) {
+  Person(char *name, char *id, int math, int chinese, int english)
+  {
     strcpy(Name, name);
     strcpy(Id, id);
     Math = math;
@@ -17,7 +19,8 @@ public:
     Sum = Math + Chinese + English;
   }
 
-  void display() {
+  void display()
+  {
     cout << Name << "\t" << Id << "\t" << Math << "\t" << Chinese << "\t"
          << English << "\t" << Sum << endl;
   }
@@ -31,14 +34,16 @@ private:
   int Sum;
 };
 
-int main(int argc, char const *argv[]) {
+int main(int argc, char const *argv[])
+{
   char ch;
   char Name[20], Id[20];
   int Math, Chinese, English;
   fstream ioFile;
-  ioFile.open("d:/per.dat", ios::out | ios::app);
+  ioFile.open("/root/chenkun/gitlab/CPlusPlusThings/practical_exercises/key_exercises/per.dat", ios::out | ios::app);
   cout << "---------建立学生档案信息----------\n";
-  do {
+  do
+  {
     cout << "请输入姓名：";
     cin >> Name;
     cout << "请输入身份证号：";
@@ -60,15 +65,17 @@ int main(int argc, char const *argv[]) {
   ioFile.read((char *)&p, sizeof(p));
   vector<Person> v;
   vector<Person>::iterator vt;
-  while (!ioFile.eof()) {
+  while (!ioFile.eof())
+  {
     v.push_back(p);
     ioFile.read((char *)&p, sizeof(p));
   }
   ioFile.close();
   cout << "---------输出档案信息-----------" << endl;
-  for (vt = v.begin(); vt != v.end(); vt++) {
+  for (vt = v.begin(); vt != v.end(); vt++)
+  {
     (*vt).display();
   }
-  
+
   return 0;
 }

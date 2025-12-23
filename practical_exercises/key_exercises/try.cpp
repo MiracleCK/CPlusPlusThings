@@ -1,25 +1,35 @@
 /* 异常捕获.cpp */
 #include <iostream>
 using namespace std;
-//函数异常可以抛出去由主函数来处理
-void fun(int x) {
-  try {
+// 函数异常可以抛出去由主函数来处理
+void fun(int x)
+{
+  try
+  {
+    cout << "try" << endl;
     if (x == 0)
+    {
+      cout << "异常" << endl;
       throw "异常";
-  } catch (...) {
+    }
+  }
+  catch (...)
+  {
     cout << "in fun" << endl;
     throw 1;
   }
 }
 
-int main(int argc, char const *argv[]) {
-
-  try {
+int main(int argc, char const *argv[])
+{
+  try
+  {
     fun(0);
-  } catch (int n) {
+  }
+  catch (int n)
+  {
     cout << "in main" << endl;
   }
 
-  
   return 0;
 }

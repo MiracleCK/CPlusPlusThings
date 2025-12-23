@@ -12,12 +12,14 @@
 #include <iostream>
 using namespace std;
 
-class Circle {
+class Circle
+{
 private:
   double x, y, r;
 
 public:
-  Circle(double x1, double y1, double r1) {
+  Circle(double x1, double y1, double r1)
+  {
     x = x1;
     y = y1;
     r = r1;
@@ -27,16 +29,18 @@ public:
   operator float() { return (float)3.14 * r * r; }
 };
 
-int main() {
+int main()
+{
   Circle c(2.3, 3.4, 3.95);
-  int r = c;         //调用operator int()，将Circle类型转换成int
-  double length = c; //调用operator double()，转换成double
-  double len = (double)c; //将Cirlce类型对象强制转换成double
-  float area = c;    //调用operator float()，将Circle类型转换成float
+  int r = c; // 调用operator int()，将Circle类型转换成int
+  cout << int(-4.1) << endl;
+  double length = c;      // 调用operator double()，转换成double
+  double len = (double)c; // 将Cirlce类型对象强制转换成double
+  float area = c;         // 调用operator float()，将Circle类型转换成float
   cout << r << endl;
   cout << length << endl;
   cout << len << endl;
-  cout << area << endl;  
+  cout << area << endl;
 }
 
 // ???
